@@ -12,7 +12,7 @@ Resources:
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
-      Timeout: 300
+      Timeout: 900
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
@@ -121,9 +121,9 @@ Parameters:
   StackeryEnvironmentTagName:
     Type: String
     Description: Environment Name (injected by Stackery at deployment time)
-  StackeryDeploymentTimestamp:
-    Type: Number
-    Description: Stackery Deployment preparation timestamp in milliseconds Since Epoch (injected by Stackery at deployment time)
   StackeryEnvironmentAPIGatewayStageName:
     Type: String
     Description: Environment name used for API Gateway Stage names (injected by Stackery at deployment time)
+  StackeryDeploymentTimestamp:
+    Type: Number
+    Description: Stackery Deployment preparation timestamp in milliseconds Since Epoch (injected by Stackery at deployment time)
