@@ -33,7 +33,7 @@ Resources:
         api5373E8A2:
           Type: Api
           Properties:
-            Path: /github-update
+            Path: /github-hook
             Method: POST
             RestApiId: !Ref api5373E8A2
     Metadata:
@@ -104,7 +104,7 @@ Resources:
         swagger: '2.0'
         info: {}
         paths:
-          /github-update:
+          /github-hook:
             post:
               x-amazon-apigateway-integration:
                 httpMethod: POST
