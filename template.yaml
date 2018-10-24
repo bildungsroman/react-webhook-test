@@ -33,8 +33,8 @@ Resources:
         api5373E8A2:
           Type: Api
           Properties:
-            Path: /
-            Method: GET
+            Path: /github-update
+            Method: POST
             RestApiId: !Ref api5373E8A2
     Metadata:
       StackeryName: deployFrontEnd
@@ -104,8 +104,8 @@ Resources:
         swagger: '2.0'
         info: {}
         paths:
-          /:
-            get:
+          /github-update:
+            post:
               x-amazon-apigateway-integration:
                 httpMethod: POST
                 type: aws_proxy
