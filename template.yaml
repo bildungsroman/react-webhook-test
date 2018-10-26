@@ -34,7 +34,7 @@ Resources:
           Type: Api
           Properties:
             Path: /github-hook
-            AuthorizationType: "NONE"
+            ApiKeyRequired: false
             Method: POST
             RestApiId: !Ref api5373E8A2
     Metadata:
