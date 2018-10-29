@@ -45,7 +45,7 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: index.html
     Metadata:
-      StackeryName: React App Host
+      StackeryName: React App Host 2
   cdn28E7E29D:
     Type: AWS::CloudFront::Distribution
     Properties:
