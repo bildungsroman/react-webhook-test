@@ -29,13 +29,6 @@ Resources:
           BUCKET_NAME: !Ref objectStore86870FA0
           BUCKET_ARN: !GetAtt objectStore86870FA0.Arn
           XDG_CONFIG_HOME: /tmp/.config
-      Events:
-        api5373E8A2:
-          Type: Api
-          Properties:
-            Path: /github-hook
-            Method: POST
-            RestApiId: !Ref api5373E8A2
     Metadata:
       StackeryName: deployFrontEnd
   function5B4675E7DeployTrigger:
@@ -93,27 +86,6 @@ Resources:
             Resource: !Sub
               - ${BucketArn}/*
               - BucketArn: !GetAtt objectStore86870FA0.Arn
-  api5373E8A2:
-    Type: AWS::Serverless::Api
-    Properties:
-      Name: !Sub
-        - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: getUpdate
-      StageName: !Ref StackeryEnvironmentAPIGatewayStageName
-      DefinitionBody:
-        swagger: '2.0'
-        info: {}
-        paths:
-          /github-hook:
-            post:
-              x-amazon-apigateway-integration:
-                httpMethod: POST
-                type: aws_proxy
-                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${function5B4675E7.Arn}/invocations
-              responses: {}
-      EndpointConfiguration: REGIONAL
-    Metadata:
-      StackeryName: getUpdate
 Parameters:
   StackeryStackTagName:
     Type: String
@@ -121,9 +93,6 @@ Parameters:
   StackeryEnvironmentTagName:
     Type: String
     Description: Environment Name (injected by Stackery at deployment time)
-  StackeryEnvironmentAPIGatewayStageName:
-    Type: String
-    Description: Environment name used for API Gateway Stage names (injected by Stackery at deployment time)
   StackeryDeploymentTimestamp:
     Type: Number
     Description: Stackery Deployment preparation timestamp in milliseconds Since Epoch (injected by Stackery at deployment time)
