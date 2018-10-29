@@ -67,7 +67,7 @@ Resources:
             S3OriginConfig:
               OriginAccessIdentity: !Sub origin-access-identity/cloudfront/${cdn28E7E29DOriginAccessIdentity}
     Metadata:
-      StackeryName: Our CDN
+      StackeryName: My CDN
   cdn28E7E29DOriginAccessIdentity:
     Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
     Properties:
