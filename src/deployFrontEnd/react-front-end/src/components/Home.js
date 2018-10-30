@@ -7,7 +7,7 @@ class Home extends Component {
       <div className="home">
         <h2>NICE JOB</h2>
         <p>Your Serverless Single Page Application</p>
-        <p>testing!</p>
+        <p>Which can now deploy itself. Sweet!</p>
       </div>
     );
   }
